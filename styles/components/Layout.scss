@@ -1,0 +1,27 @@
+.Layout {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  width: 100vw;
+  height: 100vh;
+
+  main {
+    grid-row: 2;
+    padding: 20px;
+    z-index: 0;
+    overflow: auto;
+  }
+
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: auto 1fr;
+    .Sidebar {
+      display: inline;
+      width: 250px;
+    }
+
+    main {
+      padding: 20px 40px;
+      grid-column: 2;
+      grid-row: 2;
+    }
+  }
+}

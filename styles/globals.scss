@@ -1,0 +1,16 @@
+@import "vendors/tailwind.scss";
+
+@import "base/reset.scss";
+
+/* Components */
+@import "components/Layout.scss";
+@import "components/Navbar.scss";
+@import "components/Sidebar.scss";
+@import "components/SidebarItem.scss";
+@import "components/Button.scss";
+@import "components/ListItem.scss";
+@import "components/Card.scss";
+
+/* Layout */
+@import "layout/navbar.scss";
+@import "layout/sidebar.scss";

@@ -1,0 +1,18 @@
+.Button {
+  display: flex;
+  background: none;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+  padding: 12px;
+  border-radius: 0.5rem;
+
+  &-icon {
+    height: 20px;
+    width: 20px;
+  }
+
+  &:active {
+    @apply bg-neutral-50;
+  }
+}
