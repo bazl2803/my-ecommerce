@@ -1,19 +1,13 @@
 .SidebarItem {
   display: flex;
   align-items: center;
-  padding: 10px 22px;
-  gap: 32px;
+  gap: 24px;
   user-select: none;
-  font-size: 14px;
-  margin: 2px 0;
-  @apply text-stone-700 rounded-lg;
+  transition-duration: 0.3s;
+  margin-top: 24px;
+  @apply text-sm text-neutral-700 rounded-lg;
 
   &__icon {
-    width: 1rem;
-    height: 1rem;
-  }
-
-  &:hover {
-    @apply bg-stone-50;
+    @apply w-4 h-4;
   }
 }
