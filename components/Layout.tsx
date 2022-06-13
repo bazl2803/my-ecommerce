@@ -1,8 +1,9 @@
 /**
  *
  * Layout Component
- * v1.0.0
- * by Bryan Lemus (brian.lemus@outlook.com)
+ *
+ * @version 1.0.0
+ * @author [Bryan Lemus](https://github.com/bryanlemus)
  */
 
 // Imports
@@ -16,7 +17,7 @@ import List from "./List";
 import ListItem from "./ListItem";
 import SidebarItem from "./SidebarItem";
 
-// PropTypes
+// Types
 type props = {
   children?: ReactNode;
   title?: string;

@@ -1,36 +1,35 @@
 /**
  *
  * Button Component
- * v1.0.0
- * by Bryan Lemus (brian.lemus@outlook.com)
+ *
  */
 
-// Imports
+/**
+ * Imports
+ */
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconName } from "@fortawesome/fontawesome-svg-core";
 
-// PropTypes
+/**
+ * Types
+ */
 interface Props {
   icon?: string;
   text?: string;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-// Component
-export default class Button extends React.Component<Props, {}> {
-  iconName: IconName = this.props.icon as IconName;
+/**
+ * Definition
+ */
+export default function Button({ icon, text, onClick }: Props): JSX.Element {
+  const iconName: IconName = icon ? (icon as IconName) : ("" as IconName);
 
-  render(): React.ReactNode {
-    return (
-      <button className="Button" onClick={this.props.onClick}>
-        {this.iconName ? (
-          <FontAwesomeIcon className="Button-icon" icon={this.iconName} />
-        ) : (
-          ""
-        )}
-        <div className="Button-text">{this.props.text}</div>
-      </button>
-    );
-  }
+  return (
+    <button className="Button" onClick={onClick}>
+      <FontAwesomeIcon className="Button-icon" icon={iconName} />
+      <div className="Button-text">{text}</div>
+    </button>
+  );
 }

@@ -1,10 +1,30 @@
-import React, { ReactNode, useState } from "react";
+/**
+ *
+ * List Component
+ *
+ * @version 1.0.0
+ * @author [Bryan Lemus](https://github.com/bryanlemus)
+ */
 
-type props = {
-  children: ReactNode;
-  multiple?: boolean;
+/**
+ * Dependencies
+ */
+import React, { ReactElement } from "react";
+import ListItem from "./ListItem";
+
+/**
+ * Types
+ */
+interface Props {
+  className?: string;
+  children: ReactElement<typeof ListItem> | ReactElement<typeof ListItem>[];
+}
+
+/**
+ * Definition
+ */
+const List = ({ className, children }: Props) => {
+  return <ul className={`List ${className}`}>{children}</ul>;
 };
 
-export default function List({ children, multiple = false }: props) {
-  return <div className="List">{children}</div>;
-}
+export default List;

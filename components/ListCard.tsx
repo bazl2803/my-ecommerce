@@ -1,23 +1,35 @@
-import React from "react";
+/**
+ * Imports
+ */
+import React, { ReactElement } from "react";
 import List from "./List";
 import ListItem from "./ListItem";
+import Subheader from "./Subheader";
 
-interface props {
+/**
+ * Types
+ */
+interface Props {
   title: string;
   subtitle: string;
-  children: React.ReactNode;
+  children: ReactElement<typeof ListItem> | ReactElement<typeof ListItem[]>;
 }
 
-export default function ListCard({ children, title, subtitle }: props) {
+/**
+ * Definition
+ */
+const ListCard = ({ children, title, subtitle }: Props) => {
+  let listItems = React.Children.toArray(children);
   return (
     <div className="ListCard">
-      <div className="ListCard__header">
-        <div className="ListCard__title">{title}</div>
-        <div className="ListCard__subtitle">{subtitle}</div>
-      </div>
+      <Subheader title={title} subtitle={subtitle} />
       <List>
-        <ListItem>{children}</ListItem>
+        {listItems.map((item, index) => {
+          return <ListItem key={index}>{item}</ListItem>;
+        })}
       </List>
     </div>
   );
-}
+};
+
+export default ListCard;
