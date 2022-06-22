@@ -7,7 +7,7 @@
  */
 
 /**
- * Dependencies
+ * Imports
  */
 import React, { ReactElement } from "react";
 import ListItem from "./ListItem";

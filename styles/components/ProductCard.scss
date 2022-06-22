@@ -2,10 +2,12 @@
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
+  background-color: #fafafa;
+  border-radius: 1em;
 
   &__image {
     grid-column: span 2;
-    @apply rounded-xl bg-stone-50;
+    @apply rounded-xl;
     img{
       mix-blend-mode: multiply;
       @apply rounded-xl;

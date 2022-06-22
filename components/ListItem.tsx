@@ -9,22 +9,27 @@
 /**
  * Dependencies
  */
-import React from "react";
+import React, { ReactNode, FunctionComponent, MouseEvent } from "react";
 
 /**
  * Types
  */
 interface Props {
-  children: React.ReactNode;
-  className: string;
-  onClick: (event: React.MouseEvent<HTMLLIElement>) => void;
+  children: ReactNode;
+  className?: string;
+  onClick?: (event: MouseEvent<HTMLLIElement>) => void;
   selected?: boolean;
 }
 
 /**
  * Definition
  */
-const ListItem = ({ children, className, onClick, selected }: Props) => {
+const ListItem: FunctionComponent<Props> = ({
+  children,
+  className,
+  onClick,
+  selected,
+}) => {
   return (
     <li
       className={`ListItem

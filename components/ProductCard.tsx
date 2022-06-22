@@ -1,48 +1,55 @@
 /**
+ *
  * ProductCard Component
- * v 1.0.0
- * by Bryan Lemus (brian.lemus@outlook.com)
+ *
+ * @version 1.0.0
+ * @author [Bryan Lemus](https://github.com/bryanlemus)
  */
 
-/* Imports */
+/**
+ * Dependencies
+ */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Card from "./Card";
+import { Product } from "../types";
 
-/* Props */
-interface props {
-  image: string;
-  tag?: string;
-  title: string;
-  brand: string;
-  price: number;
-  rating: number;
+/**
+ * Types
+ */
+interface Props {
+  product: Product;
+  layout?: string;
 }
 
-/* Component */
-export default function ProductCard(props: props) {
+/**
+ * Definition
+ */
+const ProductCard = ({ product, layout }: Props) => {
   return (
-    <Card className="ProductCard">
+    <Card className={`ProductCard ${layout ? `ProductCard--${layout}` : ""}`}>
       <div className="ProductCard__image">
         <Image
-          src={props.image}
-          alt={props.title}
+          src={product.thumbnail}
+          alt={product.name}
           layout="responsive"
           objectFit="scale-down"
           width={100}
           height={100}
         />
       </div>
-      <div className="ProductCard__tag">{props.tag}</div>
-      <div className="ProductCard__title">{props.title}</div>
-      <div className="ProductCard__brand">{props.brand}</div>
+      <div className="ProductCard__tag">{product.tag}</div>
+      <div className="ProductCard__title">{product.name}</div>
+      <div className="ProductCard__brand">{product.brand}</div>
       <div className="ProductCard__price">
-        {"$" + props.price.toLocaleString()}
+        {"$" + product.price.toLocaleString()}
       </div>
       <div className="ProductCard__rating">
         <FontAwesomeIcon icon="star" className="h-4 w-4 text-yellow-400" />{" "}
-        {props.rating}
+        {product.rating}
       </div>
     </Card>
   );
-}
+};
+
+export default ProductCard;
