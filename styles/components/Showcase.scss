@@ -2,9 +2,18 @@
   display: grid;
   grid-template-rows: auto 1fr;
   gap: 8px;
+  &__header {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr auto;
+
+    .Button {
+      grid-column: 2;
+    }
+  }
   &__layout {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 130px);
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
     gap: 16px;
     grid-row: 3;
 

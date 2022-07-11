@@ -11,6 +11,7 @@
  */
 import React, { useState, useEffect } from "react";
 import { Product } from "../types";
+import Button from "./Button";
 import ProductCard from "./ProductCard";
 import TextBlock from "./TextBlock";
 
@@ -19,14 +20,13 @@ import TextBlock from "./TextBlock";
  */
 interface Props {
   title: string;
-  subtitle: string;
   products: Product[];
 }
 
 /**
  * Definition
  */
-const Showcase = ({ title, subtitle, products }: Props) => {
+const Showcase = ({ title, products }: Props) => {
   // State
   const [layout, setLayout] = useState("");
 
@@ -39,7 +39,7 @@ const Showcase = ({ title, subtitle, products }: Props) => {
     <div className="Showcase">
       <div className="Showcase__header">
         <TextBlock variant="title">{title}</TextBlock>
-        <TextBlock variant="subtitle">{subtitle}</TextBlock>
+        <Button text="See more"/>
       </div>
       <div className="Showcase__layout">
         {products.map((product, index) => (

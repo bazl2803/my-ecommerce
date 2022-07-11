@@ -8,6 +8,8 @@ import { Product } from "../types";
 import ipad from "../public/productExamples/apple_ipad-pro-spring21_hero_04202021_big.jpg.large.jpg";
 import watch from "../public/productExamples/ML743_VW_34FR+watch-41-stainless-graphite-cell-7s_VW_34FR_WF_CO.jpg";
 import imac from "../public/productExamples/imac-24-green-cto-hero-202104.jpg";
+import ListCard from "../components/ListCard";
+import ListItem from "../components/ListItem";
 
 const Home: NextPage = () => {
   const productsData: Product[] = [
@@ -56,21 +58,25 @@ const Home: NextPage = () => {
         <title>Home</title>
       </Head>
       <div className="Home">
-        <Showcase
-          title="Best Apple products"
-          subtitle="See the most recently offers in Apple products."
-          products={productsData}
-        />
-        <Showcase
-          title="Best Apple products"
-          subtitle="See the most recently offers in Apple products."
-          products={productsData}
-        />
-        <Showcase
-          title="Best Apple products"
-          subtitle="See the most recently offers in Apple products."
-          products={productsData}
-        />
+        <Showcase title="Best Apple products" products={productsData} />
+        <Showcase title="Best Apple products" products={productsData} />
+        <Showcase title="Best Apple products" products={productsData} />
+        <ListCard title="Categories">
+          <ListItem>Storage</ListItem>
+          <ListItem>Processors</ListItem>
+          <ListItem>Monitors</ListItem>
+          <ListItem>Keyboards</ListItem>
+          <ListItem>Mouses</ListItem>
+          <ListItem>Motherboards</ListItem>
+          <ListItem>Power Supplies</ListItem>
+          <ListItem>Memory</ListItem>
+          <ListItem>Accesories</ListItem>
+          <ListItem>Trackpads</ListItem>
+          <ListItem>Cases</ListItem>
+          <ListItem>Tables</ListItem>
+          <ListItem>Chairs</ListItem>
+          <ListItem>Sound</ListItem>
+        </ListCard>
       </div>
     </>
   );

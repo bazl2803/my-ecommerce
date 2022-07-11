@@ -28,7 +28,9 @@ export default function Button({ icon, text, onClick }: Props): JSX.Element {
 
   return (
     <button className="Button" onClick={onClick}>
-      <FontAwesomeIcon className="Button-icon" icon={iconName} />
+      {iconName ? (
+        <FontAwesomeIcon className="Button-icon" icon={iconName} />
+      ) : null}
       <div className="Button-text">{text}</div>
     </button>
   );

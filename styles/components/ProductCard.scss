@@ -3,6 +3,7 @@
   grid-template-columns: 1fr auto;
   align-items: center;
   background-color: $control-background;
+  gap: 2px 0;
 
   &__image {
     grid-column: span 2;
@@ -26,12 +27,6 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     font-weight: 500;
-    @apply text-slate-800 mt-2;
-  }
-
-  &__brand {
-    grid-column: span 2;
-    @apply text-slate-400 text-xs;
   }
 
   &__price {
@@ -45,7 +40,6 @@
     align-items: center;
     gap: 2px;
     font-size: 14px;
-    @apply mt-3;
     .star {
       width: 16px;
       height: 16px;
@@ -57,14 +51,7 @@
   &--minimal {
     padding: 12px;
     .ProductCard__title {
-      font-size: 12px;
-      text-align: center;
-    }
-    .ProductCard__price,
-    .ProductCard__rating,
-    .ProductCard__brand,
-    .ProductCard__tag {
-      display: none;
+      font-size: 10pt;
     }
   }
 }

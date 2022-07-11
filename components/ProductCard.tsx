@@ -45,7 +45,6 @@ const ProductCard = ({ product, layout }: Props) => {
           </div>
           <div className="ProductCard__tag">{product.tag}</div>
           <div className="ProductCard__title">{product.name}</div>
-          <div className="ProductCard__brand">{product.brand}</div>
           <div className="ProductCard__price">
             {"$" + product.price.toLocaleString()}
           </div>
