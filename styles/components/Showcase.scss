@@ -1,0 +1,17 @@
+.Showcase {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 8px;
+  &__layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 130px);
+    gap: 16px;
+    grid-row: 3;
+
+    .ProductCard {
+      &--landscape {
+        grid-column: span 2;
+      }
+    }
+  }
+}

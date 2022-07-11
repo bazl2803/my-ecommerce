@@ -1,6 +1,11 @@
-@import "vendors/tailwind.scss";
+@import "utilities/variables.scss";
+@import "utilities/mixins.scss";
+@import "utilities/function.scss";
 
 @import "base/reset.scss";
+@import "base/Typography.scss";
+
+@import "vendors/tailwind.scss";
 
 /* Components */
 @import "components/Layout.scss";
@@ -11,7 +16,11 @@
 @import "components/ListItem.scss";
 @import "components/Card.scss";
 @import "components/ProductCard.scss";
+@import "components/Showcase.scss";
 
 /* Layout */
 @import "layout/navbar.scss";
 @import "layout/sidebar.scss";
+
+/* Pages */
+@import "pages/_home";

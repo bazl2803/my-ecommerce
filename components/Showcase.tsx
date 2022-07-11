@@ -9,24 +9,14 @@
 /**
  * Imports
  */
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Product } from "../types";
 import ProductCard from "./ProductCard";
-import Subheader from "./Subheader";
+import TextBlock from "./TextBlock";
 
 /**
  * Types
  */
-interface Product {
-  id: string;
-  thumbnail: string;
-  name: string;
-  brand: string;
-  tag?: string;
-  price: number;
-  oldPrice?: string;
-  rating: number;
-}
-
 interface Props {
   title: string;
   subtitle: string;
@@ -37,21 +27,25 @@ interface Props {
  * Definition
  */
 const Showcase = ({ title, subtitle, products }: Props) => {
+  // State
+  const [layout, setLayout] = useState("");
+
+  useEffect(() => {
+    // Determine layout
+    products.length % 3 === 0 ? setLayout("landscape") : setLayout("minimal");
+  }, [products.length]);
+
   return (
     <div className="Showcase">
-      <>
-        <Subheader title={title} subtitle={subtitle} />
-        {products.forEach((product, index) => (
-          <ProductCard
-            key={index}
-            image={product.thumbnail}
-            name={product.name}
-            brand={product.brand}
-            price={product.price}
-            rating={product.rating}
-          />
+      <div className="Showcase__header">
+        <TextBlock variant="title">{title}</TextBlock>
+        <TextBlock variant="subtitle">{subtitle}</TextBlock>
+      </div>
+      <div className="Showcase__layout">
+        {products.map((product, index) => (
+          <ProductCard key={index} product={product} layout={layout} />
         ))}
-      </>
+      </div>
     </div>
   );
 };

@@ -1,3 +1,5 @@
 .Card {
-  padding: 32px;
+  padding: 24px;
+  border-radius: 1em;
+  @include elevation;
 }

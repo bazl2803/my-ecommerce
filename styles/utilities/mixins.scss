@@ -1,0 +1,48 @@
+/*
+*  Respond-to
+*/
+@mixin respond-to($media) {
+  @if $media == small-mobile {
+    @media (max-width: $mobile) {
+      @content;
+    }
+  } @else if $media == mobile {
+    @media (min-width: $mobile) {
+      @content;
+    }
+  } @else if $media == tablet {
+    @media (min-width: $tablet) {
+      @content;
+    }
+  } @else if $media == desktop {
+    @media (min-width: $desktop) {
+      @content;
+    }
+  }
+}
+
+/*
+*  Scrollbar Toggle
+*/
+@mixin hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/*
+*  Elevation Effect
+*/
+
+@mixin elevation {
+  transition: all 0.2s ease-in-out;
+  &:focus,
+  &:hover {
+    transform: scale(1.1);
+  }
+  &:active {
+    transform: scale(1);
+  }
+}

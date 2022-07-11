@@ -11,11 +11,7 @@ import React, { ReactNode } from "react";
 import logo from "../public/logoipsum-logo-55.svg";
 import Head from "next/head";
 import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
 import Button from "./Button";
-import List from "./List";
-import ListItem from "./ListItem";
-import SidebarItem from "./SidebarItem";
 
 // Types
 type props = {
@@ -25,20 +21,6 @@ type props = {
 
 // Component
 export default function Layout({ children, title }: props) {
-  const Categories = [
-    { name: "Electronics", icon: "tablet-alt" },
-    { name: "Computers", icon: "computer" },
-    { name: "Living", icon: "tv" },
-    { name: "Automotive", icon: "car" },
-    { name: "Tools", icon: "tools" },
-    { name: "Office", icon: "print" },
-    { name: "Cloths", icon: "tshirt" },
-    { name: "Pets", icon: "paw" },
-    { name: "Sports", icon: "futbol" },
-    { name: "Home", icon: "couch" },
-    { name: "Travels", icon: "plane-up" },
-    { name: "Toys", icon: "shapes" },
-  ];
   return (
     <div className="Layout">
       <Head>
@@ -50,15 +32,6 @@ export default function Layout({ children, title }: props) {
         <Button icon="cart-shopping" />
         <Button icon="user" />
       </Navbar>
-      <Sidebar>
-        <List>
-          {Categories.map((category, index) => (
-            <ListItem key={index}>
-              <SidebarItem text={category.name} icon={category.icon} />
-            </ListItem>
-          ))}
-        </List>
-      </Sidebar>
       <main>{children}</main>
     </div>
   );

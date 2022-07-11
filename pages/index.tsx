@@ -1,10 +1,13 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Card from "../components/Card";
 import Layout from "../components/Layout";
-import ProductCard from "../components/ProductCard";
 import Showcase from "../components/Showcase";
 import { Product } from "../types";
+
+// Testing
+import ipad from "../public/productExamples/apple_ipad-pro-spring21_hero_04202021_big.jpg.large.jpg";
+import watch from "../public/productExamples/ML743_VW_34FR+watch-41-stainless-graphite-cell-7s_VW_34FR_WF_CO.jpg";
+import imac from "../public/productExamples/imac-24-green-cto-hero-202104.jpg";
 
 const Home: NextPage = () => {
   const productsData: Product[] = [
@@ -21,48 +24,55 @@ const Home: NextPage = () => {
     },
     {
       id: "2",
-      name: "Product2",
-      description: "lorem ipsum sit amet",
-      brand: "BuenaMarca",
-      price: 9.21,
+      name: "2021 iPad Prop M1 128GB, Space Gray",
+      description: "Lorem ipsum sit amet",
+      brand: "Apple",
+      price: 1999.99,
       rating: 4.2,
-      thumbnail: "imageurl",
+      thumbnail: ipad.src,
     },
     {
       id: "3",
-      name: "Product3",
-      description: "lorem ipsum sit amet",
-      brand: "BuenaMarca",
-      price: 9.21,
+      name: "2021 iPad Prop M1 128GB, Space Gray",
+      description: "Lorem ipsum sit amet",
+      brand: "Apple",
+      price: 1999.99,
       rating: 4.2,
-      thumbnail: "imageurl",
+      thumbnail: watch.src,
     },
     {
       id: "4",
-      name: "Product4",
-      description: "lorem ipsum sit amet",
-      brand: "BuenaMarca",
-      price: 9.21,
+      name: "2021 iPad Prop M1 128GB, Space Gray",
+      description: "Lorem ipsum sit amet",
+      brand: "Apple",
+      price: 1999.99,
       rating: 4.2,
-      thumbnail: "imageurl",
+      thumbnail: imac.src,
     },
   ];
   return (
-    <Layout>
+    <>
       <Head>
         <title>Home</title>
       </Head>
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-        <ProductCard product={productsData[0]} />
-        <Card>
-          <Showcase
-            title="Best Seller"
-            subtitle="Best seller products in the market"
-            products={productsData}
-          />
-        </Card>
+      <div className="Home">
+        <Showcase
+          title="Best Apple products"
+          subtitle="See the most recently offers in Apple products."
+          products={productsData}
+        />
+        <Showcase
+          title="Best Apple products"
+          subtitle="See the most recently offers in Apple products."
+          products={productsData}
+        />
+        <Showcase
+          title="Best Apple products"
+          subtitle="See the most recently offers in Apple products."
+          products={productsData}
+        />
       </div>
-    </Layout>
+    </>
   );
 };
 
