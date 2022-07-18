@@ -11,7 +11,7 @@ import React, { ReactNode } from "react";
 import logo from "../public/logoipsum-logo-55.svg";
 import Head from "next/head";
 import Navbar from "./Navbar";
-import Button from "./Button";
+import Button from "../components/Button";
 
 // Types
 type props = {

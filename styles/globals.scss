@@ -8,8 +8,6 @@
 @import "vendors/tailwind.scss";
 
 /* Components */
-@import "components/Layout.scss";
-@import "components/Navbar.scss";
 @import "components/Sidebar.scss";
 @import "components/SidebarItem.scss";
 @import "components/Button.scss";
@@ -17,10 +15,13 @@
 @import "components/Card.scss";
 @import "components/ProductCard.scss";
 @import "components/Showcase.scss";
+@import "components/Rating.scss";
 
 /* Layout */
+@import "layout/layout.scss";
 @import "layout/navbar.scss";
 @import "layout/sidebar.scss";
+@import "layout/grid.scss";
 
 /* Pages */
-@import "pages/_home";
+@import "pages/Home";

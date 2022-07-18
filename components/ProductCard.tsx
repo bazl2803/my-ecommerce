@@ -9,11 +9,11 @@
 /**
  * Dependencies
  */
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
-import Card from "./Card";
-import { Product } from "../types";
 import Link from "next/link";
+import Card from "./Card";
+import Rating from "./Rating";
+import { Product } from "../types";
 
 /**
  * Types
@@ -48,10 +48,7 @@ const ProductCard = ({ product, layout }: Props) => {
           <div className="ProductCard__price">
             {"$" + product.price.toLocaleString()}
           </div>
-          <div className="ProductCard__rating">
-            <FontAwesomeIcon icon="star" className="h-4 w-4 text-yellow-400" />{" "}
-            {product.rating}
-          </div>
+          <Rating className="ProductCard__rating" value={product.rating} />
         </Card>
       </a>
     </Link>

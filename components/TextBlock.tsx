@@ -8,6 +8,7 @@ import React from "react";
  */
 
 interface Props {
+  className: string;
   variant?:
     | "heading1"
     | "heading2"
@@ -29,7 +30,15 @@ interface Props {
 /**
  * Definition
  */
-const TextBlock = ({ variant, font, color, weight, size, children }: Props) => {
+const TextBlock = ({
+  className,
+  variant,
+  font,
+  color,
+  weight,
+  size,
+  children,
+}: Props) => {
   const style = {
     fontFamily: font,
     fontWeight: weight,
@@ -37,7 +46,10 @@ const TextBlock = ({ variant, font, color, weight, size, children }: Props) => {
     color: color,
   };
   return (
-    <div className={`TextBlock Typography--${variant}`} style={style}>
+    <div
+      className={`TextBlock Typography--${variant} ${className}`}
+      style={style}
+    >
       {children}
     </div>
   );

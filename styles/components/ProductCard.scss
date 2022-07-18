@@ -1,27 +1,23 @@
 .ProductCard {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr repeat(4, auto);
   align-items: center;
   background-color: $control-background;
-  gap: 2px 0;
+  gap: 4px 0;
 
   &__image {
-    grid-column: span 2;
-    @apply rounded-xl;
     img {
       mix-blend-mode: multiply;
-      @apply rounded-xl;
     }
   }
 
   &__tag {
-    grid-column: span 2;
+    grid-row: 2;
     height: 16px;
-    @apply text-orange-600 text-xs mt-4;
   }
 
   &__title {
-    grid-column: span 2;
+    grid-row: 3;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -30,21 +26,12 @@
   }
 
   &__price {
+    grid-row: 4;
     font-size: 14px;
-    @apply mt-3 text-slate-600;
   }
 
   &__rating {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    gap: 2px;
-    font-size: 14px;
-    .star {
-      width: 16px;
-      height: 16px;
-      @apply text-yellow-400;
-    }
+    grid-row: 5;
   }
 
   /* Modifiers */

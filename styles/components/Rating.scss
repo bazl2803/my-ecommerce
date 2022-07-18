@@ -1,0 +1,11 @@
+.Rating {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2px;
+  color: #ffee00;
+
+  svg {
+    height: 12px;
+    width: 12px;
+  }
+}
