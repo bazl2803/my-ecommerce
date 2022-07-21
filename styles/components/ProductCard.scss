@@ -2,18 +2,21 @@
   display: grid;
   grid-template-columns: 1fr repeat(4, auto);
   align-items: center;
-  background-color: $control-background;
   gap: 4px 0;
+  padding: 10px;
 
   &__image {
     img {
       mix-blend-mode: multiply;
+      border-radius: 16px;
     }
   }
 
   &__tag {
     grid-row: 2;
     height: 16px;
+    font-size: 9pt;
+    font-weight: 500;
   }
 
   &__title {
@@ -22,12 +25,15 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    font-size: 10pt;
     font-weight: 500;
+    line-height: 15pt;
   }
 
   &__price {
     grid-row: 4;
-    font-size: 14px;
+    font-size: 13pt;
+    font-weight: 600;
   }
 
   &__rating {
@@ -36,9 +42,19 @@
 
   /* Modifiers */
   &--minimal {
-    padding: 12px;
-    .ProductCard__title {
-      font-size: 10pt;
+    .ProductCard__tag,
+    .ProductCard__price,
+    .ProductCard__title,
+    .ProductCard__rating {
+      display: none;
     }
+  }
+
+  &:hover {
+    box-shadow: #63636333 0px 2px 8px 0px;
+  }
+
+  @include respond-to("desktop") {
+    padding: 16px;
   }
 }

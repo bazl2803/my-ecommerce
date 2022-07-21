@@ -1,11 +1,12 @@
 .Grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, min(300px, 100%));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 100%));
   grid-auto-flow: dense;
-  gap: 20px;
+  gap: 50px 10px;
   justify-content: center;
 
-  @include respond-to("desktop") {
-    grid-template-columns: repeat(auto-fit, min(420px, 100%));
+  @include respond-to("tablet") {
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, min(380px, 100%));
   }
 }

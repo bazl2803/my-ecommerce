@@ -1,11 +1,17 @@
 .Rating {
   display: flex;
-  flex-wrap: nowrap;
-  gap: 2px;
-  color: #ffee00;
+  gap: 4px;
+
+  &__stars {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 2px;
+    color: #ffc400;
+  }
 
   svg {
-    height: 12px;
-    width: 12px;
+    height: 14px;
+    width: 14px;
   }
 }

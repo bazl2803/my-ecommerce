@@ -14,6 +14,7 @@ import Link from "next/link";
 import Card from "./Card";
 import Rating from "./Rating";
 import { Product } from "../types";
+import TextBlock from "./TextBlock";
 
 /**
  * Types
@@ -43,7 +44,9 @@ const ProductCard = ({ product, layout }: Props) => {
               height={100}
             />
           </div>
-          <div className="ProductCard__tag">{product.tag}</div>
+          <div className="ProductCard__tag">
+            {product.tag ? product.tag : ""}
+          </div>
           <div className="ProductCard__title">{product.name}</div>
           <div className="ProductCard__price">
             {"$" + product.price.toLocaleString()}

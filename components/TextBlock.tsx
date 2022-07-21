@@ -8,18 +8,21 @@ import React from "react";
  */
 
 interface Props {
-  className: string;
+  className?: string;
   variant?:
-    | "heading1"
-    | "heading2"
-    | "heading3"
-    | "heading4"
-    | "heading5"
-    | "heading6"
+    | "h1"
+    | "h2"
+    | "h3"
+    | "h4"
+    | "h5"
+    | "h6"
     | "title"
-    | "subtitle"
-    | "body"
-    | "caption";
+    | "subtitle1"
+    | "subtitle2"
+    | "body1"
+    | "body2"
+    | "caption"
+    | "overline";
   font?: string;
   color?: string;
   weight?: string;
@@ -47,7 +50,9 @@ const TextBlock = ({
   };
   return (
     <div
-      className={`TextBlock Typography--${variant} ${className}`}
+      className={`TextBlock
+      ${variant ? `Typography--${variant}` : ""}
+      ${className ? className : ""}`}
       style={style}
     >
       {children}

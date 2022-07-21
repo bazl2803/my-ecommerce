@@ -32,7 +32,7 @@ const Showcase = ({ title, products }: Props) => {
 
   useEffect(() => {
     // Determine layout
-    products.length % 3 === 0 ? setLayout("landscape") : setLayout("minimal");
+    products.length % 2 !== 0 ? setLayout("landscape") : setLayout("minimal");
   }, [products.length]);
 
   return (

@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { ReactNode } from "react";
+import TextBlock from "./TextBlock";
 
 interface props {
   className?: string;
@@ -25,15 +26,22 @@ const Rating = ({ className, value }: props) => {
 
     // Determines half stars
     if (ratingValue.toString()[2] >= "3" && ratingValue.toString()[2] <= "7")
-      stars.push(<FontAwesomeIcon icon="star-half" />);
+      stars.push(<FontAwesomeIcon key={starCount + 1} icon="star-half" />);
     else if (ratingValue.toString()[2] >= "7")
-      stars.push(<FontAwesomeIcon key={starCount} icon="star" />);
+      stars.push(<FontAwesomeIcon key={starCount + 1} icon="star" />);
 
     // Return stars
     return stars;
   };
 
-  return <div className={`Rating ${className}`}>{renderStars()}</div>;
+  return (
+    <div className={`Rating ${className}`}>
+      <div className="Rating__stars">{renderStars()}</div>
+      <TextBlock className="Rating__value" color="black" size="10pt">
+        {value.toFixed(1)}
+      </TextBlock>
+    </div>
+  );
 };
 
 export default Rating;
