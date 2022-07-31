@@ -1,0 +1,11 @@
+{
+  "type": "mongodb",
+  "url": "mongodb+srv://bryan:J62YW4na0cOCzKN1@cluster0.mmsco.mongodb.net/ecommerce?retryWrites=true&w=majority",
+  "database": "ecommerce",
+  "useNewUrlParser": true,
+  "synchronize": true,
+  "useUnifiedTopology": true,
+  "logging": true,
+  "ssl": true,
+  "entities": ["graphql/entities/**/*.ts"]
+}

@@ -1,12 +1,17 @@
 .Grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 100%));
+  grid-template-columns: repeat(auto-fit, minmax(100%, 320px));
   grid-auto-flow: dense;
   gap: 50px 10px;
   justify-content: center;
 
   @include respond-to("tablet") {
+    gap: 20px 10px;
+    grid-template-columns: repeat(2, 360px);
+  }
+
+  @include respond-to("desktop") {
     gap: 40px;
-    grid-template-columns: repeat(auto-fit, min(380px, 100%));
+    grid-template-columns: repeat(3, 1fr);
   }
 }

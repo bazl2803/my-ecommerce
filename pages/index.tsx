@@ -35,7 +35,7 @@ const Home: NextPage = () => {
     },
     {
       id: "3",
-      name: "Apple Watch Series 7, 38mm",
+      name: "Apple Watch Series 7",
       description: "Lorem ipsum sit amet",
       brand: "Apple",
       price: 1999.99,
@@ -59,9 +59,9 @@ const Home: NextPage = () => {
       </Head>
       <div className="Home">
         <Grid>
-          <Showcase title="Best Apple products" products={productsData} />
-          <Showcase title="Best Apple products" products={productsData} />
-          <Showcase title="Best Apple products" products={productsData} />
+          <Showcase title="Best Seller" products={productsData} />
+          <Showcase title="Top Trending" products={productsData} />
+          <Showcase title="New Arrivals" products={productsData} />
           <ListCard title="Categories">
             <ListItem>Storage</ListItem>
             <ListItem>Processors</ListItem>

@@ -2,6 +2,10 @@
   display: grid;
   grid-template-rows: auto 1fr;
   gap: 8px;
+  background-color: $control-background;
+  padding: 16px;
+  border-radius: 24px;
+
   &__header {
     display: grid;
     align-items: center;
@@ -13,9 +17,9 @@
   }
   &__layout {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     gap: 16px;
     grid-row: 3;
+    grid-template-columns: repeat(2, 1fr);
 
     .ProductCard {
       &--landscape {

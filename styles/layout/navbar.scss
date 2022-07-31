@@ -1,5 +1,5 @@
 .Navbar {
-  background-color: hsla(0, 0%, 100%, 0.97);
+  background-color: hsla(0, 0%, 100%, 0.95);
   padding: 8px 16px;
   backdrop-filter: blur(8px);
 
@@ -7,13 +7,13 @@
     display: grid;
     grid-template-columns: auto 1fr auto;
     grid-template-rows: 40px auto;
-    align-items: center;
+    align-content: center;
     justify-items: center;
     gap: 14px 32px;
   }
 
   &__logo {
-    display: block;
+    display: grid;
     width: 100px;
     height: 40px;
   }
