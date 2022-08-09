@@ -1,8 +1,7 @@
 import { NextPage } from "next";
-import Layout from "../../components/Layout";
 
 const CategoryPage: NextPage = () => {
-  return <Layout></Layout>;
+  return <h1>{"Category Page"}</h1>;
 };
 
 export default CategoryPage;

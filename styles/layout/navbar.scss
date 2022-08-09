@@ -34,32 +34,32 @@
       caret-color: transparent;
       background-color: $control-background;
       padding: 8px 16px;
-      border-radius: 8px;
+      border-radius: 12px;
 
       &::-webkit-input-placeholder {
         text-align: center;
-        color: #7c7878;
-        font-weight: 600;
+        color: black;
+        font-weight: 500;
       }
 
       &:-moz-placeholder {
         /* Firefox 18- */
         text-align: center;
-        color: #7c7878;
-        font-weight: 600;
+        color: black;
+        font-weight: 500;
       }
 
       &::-moz-placeholder {
         /* Firefox 19+ */
         text-align: center;
-        color: #7c7878;
-        font-weight: 600;
+        color: black;
+        font-weight: 500;
       }
 
       &:-ms-input-placeholder {
         text-align: center;
-        color: #7c7878;
-        font-weight: 600;
+        color: black;
+        font-weight: 500;
       }
 
       &:focus {

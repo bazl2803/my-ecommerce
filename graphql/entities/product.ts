@@ -1,5 +1,6 @@
 import { Field, ID, ObjectType } from "type-graphql";
 import { BaseEntity, Column, Entity, ObjectID, ObjectIdColumn } from "typeorm";
+import { Feature } from "./feature";
 
 @ObjectType()
 @Entity()
@@ -47,4 +48,12 @@ export class Product extends BaseEntity {
   @Field()
   @Column()
   availability!: boolean;
+
+  @Field()
+  @Column()
+  categoryId!: ObjectID;
+
+  @Field(type => [Feature])
+  @Column(type => Feature)
+  features?: Feature[]
 }
