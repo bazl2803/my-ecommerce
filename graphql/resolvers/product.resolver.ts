@@ -1,21 +1,20 @@
-import { Arg, FieldResolver, Query, Resolver, Root } from "type-graphql";
-import { ObjectID } from "typeorm";
+import { Arg, Mutation, Query, Resolver } from "type-graphql";
 import { Product } from "../entities/product";
 import { AppDataSource } from "../../data-source";
-import { Category } from "../entities/category";
+import { ProductInput } from "../inputs/product.input";
 
-@Resolver(Product)
+@Resolver((of) => Product)
 export class ProductResolver {
-  constructor(private repository = AppDataSource.getRepository(Product)) { }
+  constructor(private repository = AppDataSource.getRepository(Product)) {}
 
   /**
    * Return a single product
-   * @param id 
+   * @param id
    * @returns Product
    */
   @Query((returns) => Product)
-  async product(@Arg("id") id: ObjectID): Promise<Product | null> {
-    const product = await this.repository.findOneBy({ id: id });
+  async product(@Arg("id") id: string): Promise<Product | null> {
+    const product = await this.repository.findOneBy({ _id: id });
     if (product === undefined) {
       throw new Error("Product not found");
     }
@@ -24,8 +23,8 @@ export class ProductResolver {
 
   /**
    * Return all products.
-   * @param skip 
-   * @param take 
+   * @param skip
+   * @param take
    * @returns Product[]
    */
   @Query((returns) => [Product])
@@ -33,18 +32,38 @@ export class ProductResolver {
     @Arg("skip") skip: number = 0,
     @Arg("take") take: number = 25
   ) {
-    return this.repository.find({ skip, take });
+    return await this.repository.find({ skip, take });
   }
 
   /**
-   * 
-   * @param product 
-   * @returns 
+   * Create a product
+   * @param product
    */
-  @FieldResolver((returns) => Category)
-  async category(@Root() @Arg("product") product: Product) {
-    return AppDataSource.getRepository(Category).findOneBy({ id: product.categoryId })
+  @Mutation(() => Product)
+  async createProduct(@Arg("Product") product: ProductInput) {
+    const newProduct = Product.create(product);
+    await newProduct.save().then(() => {
+      return newProduct;
+    });
   }
 
+  /**
+   * Removes a product
+   * @param id
+   * @returns
+   */
+  @Mutation(() => Product)
+  async removeProduct(@Arg("id") id: string) {
+    return await this.repository.delete(id);
+  }
 
+  /**
+   * Update a product
+   * @param id
+   * @param product
+   */
+  @Mutation(() => Product)
+  async updateProduct(id: string, product: ProductInput) {
+    return await this.repository.update({ _id: id }, product);
+  }
 }

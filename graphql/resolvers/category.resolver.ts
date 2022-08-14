@@ -1,11 +1,10 @@
-import { Arg, Query, Resolver, Root } from "type-graphql";
-import { ObjectID } from "typeorm";
+import { Arg, FieldResolver, Query, Resolver, Root } from "type-graphql";
 import { AppDataSource } from "../../data-source";
 import { Category } from "../entities/category";
 import { Product } from "../entities/product";
 
 @Resolver((of) => Category)
-class CategoryResolver {
+export class CategoryResolver {
   constructor(private repository = AppDataSource.getRepository(Category)) { }
 
   /**
@@ -15,8 +14,8 @@ class CategoryResolver {
    */
 
   @Query((returns) => Category)
-  async category(@Arg("id") id: ObjectID): Promise<Category | null> {
-    const category = await this.repository.findOneBy({ id: id });
+  async category(@Arg("id") id: string): Promise<Category | null> {
+    const category = await this.repository.findOneBy({ _id: id });
     if (category === undefined) {
       throw new Error("Product not found");
     }
@@ -31,17 +30,5 @@ class CategoryResolver {
   @Query((returns) => [Category])
   async categories(): Promise<Category[]> {
     return await this.repository.find();
-  }
-
-  /**
-   * Return products with the same category
-   * @param category
-   * @returns Product[]
-   */
-  @Query(returns => [Product])
-  async products(@Root() @Arg("category") category: Category): Promise<Product[]> {
-    return AppDataSource.getRepository(Product).findBy({
-      categoryId: category.id
-    })
   }
 }

@@ -1,5 +1,7 @@
-import { Field, ID, ObjectType } from "type-graphql";
-import { BaseEntity, Column, Entity, ObjectID, ObjectIdColumn } from "typeorm";
+import { Field, ID, InputType, ObjectType, Root } from "type-graphql";
+import { BaseEntity, Column, Entity, ObjectIdColumn } from "typeorm";
+import { AppDataSource } from "../../data-source";
+import { Category } from "./category";
 import { Feature } from "./feature";
 
 @ObjectType()
@@ -7,7 +9,7 @@ import { Feature } from "./feature";
 export class Product extends BaseEntity {
   @Field(() => ID)
   @ObjectIdColumn()
-  readonly id!: ObjectID;
+  readonly _id!: string;
 
   @Field()
   @Column()
@@ -37,11 +39,11 @@ export class Product extends BaseEntity {
   @Column()
   thumbnail!: string;
 
-  @Field()
+  @Field((type) => [String])
   @Column()
   photos!: string[];
 
-  @Field()
+  @Field((type) => [String])
   @Column()
   tags!: string[];
 
@@ -51,9 +53,16 @@ export class Product extends BaseEntity {
 
   @Field()
   @Column()
-  categoryId!: ObjectID;
+  categoryId!: string;
 
-  @Field(type => [Feature])
-  @Column(type => Feature)
-  features?: Feature[]
+  @Field((type) => [Feature])
+  @Column((type) => Feature)
+  features?: Feature[];
+
+  @Field((type) => Category)
+  async category(@Root() parent: Product) {
+    return await AppDataSource.getRepository("category").findBy({
+      _id: parent.categoryId,
+    });
+  }
 }

@@ -34,7 +34,7 @@ export class UserResolver {
     return user;
   }
 
-  @Query()
+  @Query((returns) => Token)
   async login(
     @Arg("username") username: string,
     @Arg("email") email: string,

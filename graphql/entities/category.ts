@@ -1,12 +1,14 @@
-import { Field, ID, ObjectType } from "type-graphql";
-import { BaseEntity, Column, Entity, ObjectID, ObjectIdColumn } from "typeorm";
+import { Field, ID, ObjectType, Root } from "type-graphql";
+import { BaseEntity, Column, Entity, ObjectIdColumn } from "typeorm";
+import { AppDataSource } from "../../data-source";
+import { Product } from "./product";
 
 @ObjectType()
 @Entity()
 export class Category extends BaseEntity {
   @Field(() => ID)
   @ObjectIdColumn()
-  readonly id!: ObjectID;
+  readonly _id!: string;
 
   @Field()
   @Column()
@@ -15,4 +17,11 @@ export class Category extends BaseEntity {
   @Field()
   @Column()
   name!: string;
+
+  @Field(() => [Product])
+  async products(@Root() parent: Category) {
+    return await AppDataSource.getRepository(Product).findBy({
+      categoryId: parent._id,
+    });
+  }
 }
