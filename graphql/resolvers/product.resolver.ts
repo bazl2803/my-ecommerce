@@ -31,7 +31,7 @@ export class ProductResolver {
   async products(
     @Arg("skip") skip: number = 0,
     @Arg("take") take: number = 25
-  ) {
+  ): Promise<Product[]> {
     return await this.repository.find({ skip, take });
   }
 
@@ -40,7 +40,7 @@ export class ProductResolver {
    * @param product
    */
   @Mutation(() => Product)
-  async createProduct(@Arg("Product") product: ProductInput) {
+  async createProduct(@Arg("Product") product: ProductInput): Promise<void> {
     const newProduct = Product.create(product);
     await newProduct.save().then(() => {
       return newProduct;
