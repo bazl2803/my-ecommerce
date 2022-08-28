@@ -1,8 +1,9 @@
-import React, { ReactNode } from "react";
+import React, { ReactElement } from "react";
+import GridItem from "./GridItem";
 
 interface props {
   className?: string;
-  children: ReactNode;
+  children?: ReactElement<typeof GridItem> | ReactElement<typeof GridItem>[];
 }
 
 const Grid = ({ className, children }: props) => {

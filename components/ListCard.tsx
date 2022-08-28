@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import Card from "./Card";
 import List from "./List";
 import ListItem from "./ListItem";
 import TextBlock from "./TextBlock";
@@ -10,10 +11,12 @@ interface props {
 
 const ListCard = ({ title, children }: props) => {
   return (
-    <div className="ListCard">
-      <TextBlock>{title}</TextBlock>
-      <List>{children}</List>
-    </div>
+    <Card>
+      <div className="ListCard">
+        <TextBlock>{title}</TextBlock>
+        <List>{children}</List>
+      </div>
+    </Card>
   );
 };
 

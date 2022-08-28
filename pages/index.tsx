@@ -59,9 +59,6 @@ const Home: NextPage = () => {
       </Head>
       <div className="Home">
         <Grid>
-          <Showcase title="Best Seller" products={productsData} />
-          <Showcase title="Top Trending" products={productsData} />
-          <Showcase title="New Arrivals" products={productsData} />
           <ListCard title="Categories">
             <ListItem>Storage</ListItem>
             <ListItem>Processors</ListItem>
@@ -78,6 +75,10 @@ const Home: NextPage = () => {
             <ListItem>Chairs</ListItem>
             <ListItem>Sound</ListItem>
           </ListCard>
+          <Showcase title="Best Seller" products={productsData} />
+          <Showcase title="Top Trending" products={productsData} />
+          <Showcase title="New Arrivals" products={productsData} />
+          <Showcase title="New Arrivals" products={productsData} />
         </Grid>
       </div>
     </>
