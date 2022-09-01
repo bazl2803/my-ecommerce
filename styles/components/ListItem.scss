@@ -1,7 +1,9 @@
 .ListItem {
-  padding: 4px 12px;
+  padding: 8px 14px;
+  border-radius: 12px;
+  transition: ease-in-out 0.2s;
 
   &:hover {
-    background-color: whitesmoke;
+    background-color: hsla(0, 0%, 0%, 0.05);
   }
 }

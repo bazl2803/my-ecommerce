@@ -1,3 +1,13 @@
 .Home {
-  padding: 16px 8%;
+  padding: 24px 16px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  
+  .List {
+    display: none;
+    @include respond-to("desktop") {
+      display: block;
+      min-width: 250px;
+    }
+  }
 }

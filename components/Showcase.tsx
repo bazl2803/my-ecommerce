@@ -12,7 +12,7 @@
 import React, { useState, useEffect } from "react";
 import { Product } from "../types";
 import Button from "./Button";
-import ProductCard from "./ProductCard";
+import ProductCard from "../features/products/ProductCard";
 import TextBlock from "./TextBlock";
 
 /**
@@ -39,7 +39,7 @@ const Showcase = ({ title, products }: Props) => {
     <div className="Showcase">
       <div className="Showcase__header">
         <TextBlock variant="title">{title}</TextBlock>
-        <Button text="See more"/>
+        <Button text="See more" />
       </div>
       <div className="Showcase__layout">
         {products.map((product, index) => (

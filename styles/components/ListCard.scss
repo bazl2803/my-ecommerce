@@ -1,0 +1,13 @@
+.ListCard {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  user-select: none;
+  padding: 16px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  &__title {
+    padding-left: 12px;
+    padding-bottom: 12px;
+  }
+}

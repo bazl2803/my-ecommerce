@@ -11,11 +11,9 @@ interface props {
 
 const ListCard = ({ title, children }: props) => {
   return (
-    <Card>
-      <div className="ListCard">
-        <TextBlock>{title}</TextBlock>
+    <Card className="ListCard">
+        <TextBlock className="ListCard__title" variant="title">{title}</TextBlock>
         <List>{children}</List>
-      </div>
     </Card>
   );
 };

@@ -7,7 +7,7 @@ import { Product } from "../types";
 import ipad from "../public/productExamples/apple_ipad-pro-spring21_hero_04202021_big.jpg.large.jpg";
 import watch from "../public/productExamples/ML743_VW_34FR+watch-41-stainless-graphite-cell-7s_VW_34FR_WF_CO.jpg";
 import imac from "../public/productExamples/imac-24-green-cto-hero-202104.jpg";
-import ListCard from "../components/ListCard";
+import List from "../components/List";
 import ListItem from "../components/ListItem";
 import Grid from "../layout/Grid";
 
@@ -58,27 +58,30 @@ const Home: NextPage = () => {
         <title>Home</title>
       </Head>
       <div className="Home">
+        <List>
+          <ListItem>Storage</ListItem>
+          <ListItem>Processors</ListItem>
+          <ListItem>Monitors</ListItem>
+          <ListItem>Keyboards</ListItem>
+          <ListItem>Mouses</ListItem>
+          <ListItem>Motherboards</ListItem>
+          <ListItem>Power Supplies</ListItem>
+          <ListItem>Memory</ListItem>
+          <ListItem>Accesories</ListItem>
+          <ListItem>Trackpads</ListItem>
+          <ListItem>Cases</ListItem>
+          <ListItem>Tables</ListItem>
+          <ListItem>Chairs</ListItem>
+          <ListItem>Sound</ListItem>
+        </List>
+
         <Grid>
-          <ListCard title="Categories">
-            <ListItem>Storage</ListItem>
-            <ListItem>Processors</ListItem>
-            <ListItem>Monitors</ListItem>
-            <ListItem>Keyboards</ListItem>
-            <ListItem>Mouses</ListItem>
-            <ListItem>Motherboards</ListItem>
-            <ListItem>Power Supplies</ListItem>
-            <ListItem>Memory</ListItem>
-            <ListItem>Accesories</ListItem>
-            <ListItem>Trackpads</ListItem>
-            <ListItem>Cases</ListItem>
-            <ListItem>Tables</ListItem>
-            <ListItem>Chairs</ListItem>
-            <ListItem>Sound</ListItem>
-          </ListCard>
           <Showcase title="Best Seller" products={productsData} />
           <Showcase title="Top Trending" products={productsData} />
           <Showcase title="New Arrivals" products={productsData} />
-          <Showcase title="New Arrivals" products={productsData} />
+          <Showcase title="Great Discounts" products={productsData} />
+          <Showcase title="Editor's Choice" products={productsData} />
+          <Showcase title="Promoted" products={productsData} />
         </Grid>
       </div>
     </>

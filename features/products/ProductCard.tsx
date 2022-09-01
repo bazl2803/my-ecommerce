@@ -11,10 +11,9 @@
  */
 import Image from "next/image";
 import Link from "next/link";
-import Card from "./Card";
-import Rating from "./Rating";
-import { Product } from "../types";
-import TextBlock from "./TextBlock";
+import Card from "../../components/Card";
+import Rating from "../../components/Rating";
+import { Product } from "../../types";
 
 /**
  * Types
@@ -29,7 +28,7 @@ interface Props {
  */
 const ProductCard = ({ product, layout }: Props) => {
   return (
-    <Link href="/product/[id]" as={`/product/${product.id}`}>
+    <Link href="/products/[id]" as={`/products/${product.id}`}>
       <a>
         <Card
           className={`ProductCard ${layout ? `ProductCard--${layout}` : ""}`}

@@ -1,8 +1,8 @@
 .ProductCard {
   display: grid;
   align-items: center;
-  gap: 4px 0;
-  padding: 10px;
+  gap: 2px 0;
+  padding: 16px;
   background-color: white;
   @include elevation;
 
@@ -23,16 +23,17 @@
   &__title {
     grid-row: 3;
     overflow: hidden;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
     line-height: 15pt;
     text-overflow: ellipsis;
     white-space: nowrap;
+    color:#555454;
   }
 
   &__price {
     grid-row: 4;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 700;
   }
 
@@ -48,13 +49,5 @@
     }
 
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  }
-
-  &:hover {
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  }
-
-  @include respond-to("desktop") {
-    padding: 16px;
   }
 }

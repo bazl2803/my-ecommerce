@@ -24,7 +24,7 @@ interface Props {
  * Definition
  */
 const List = ({ className, children }: Props) => {
-  return <ul className={`List ${className}`}>{children}</ul>;
+  return <ul className={"List" + `${className ?? ""}`}>{children}</ul>;
 };
 
 export default List;
