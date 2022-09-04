@@ -1,16 +1,21 @@
 .Layout {
+  display: grid;
+  grid-template-rows: auto 1fr;
   width: 100%;
 
   .Navbar {
     position: sticky;
     top: 0;
     z-index: 5;
+    grid-row: 1;
   }
 
   main {
+    display: grid;
     z-index: 0;
     overflow: auto;
     grid-row: 2;
+    justify-content: center;
     @include hide-scrollbar;
   }
 }

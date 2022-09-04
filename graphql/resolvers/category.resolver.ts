@@ -1,7 +1,6 @@
-import { Arg, FieldResolver, Query, Resolver, Root } from "type-graphql";
+import { Arg, Query, Resolver } from "type-graphql";
 import { AppDataSource } from "../../data-source";
 import { Category } from "../entities/category";
-import { Product } from "../entities/product";
 
 @Resolver((of) => Category)
 export class CategoryResolver {

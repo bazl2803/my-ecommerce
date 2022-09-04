@@ -3,8 +3,12 @@
   overflow: auto;
   width: -webkit-fill-available;
   height: -webkit-fill-available;
-  padding: 8px 32px;
-  background-color: #fff;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  overflow-x: hidden;
+  overflow-y: auto;
   /* @apply shadow shadow-neutral-100; */
   &::-webkit-scrollbar {
     display: none;

@@ -17,6 +17,6 @@ type props = {
 // Components
 export default function sidebar({ children, mode }: props) {
   return (
-    <div className={`Sidebar ${mode ? "Sidebar-" + mode : ""}`}>{children}</div>
+    <div className={`Sidebar ${mode && "Sidebar-" + mode}`}>{children}</div>
   );
 }

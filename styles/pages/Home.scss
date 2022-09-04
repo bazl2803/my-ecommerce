@@ -1,13 +1,22 @@
 .Home {
-  padding: 24px 16px;
   display: grid;
-  grid-template-columns: auto 1fr;
-  
-  .List {
+  gap: 24px;
+  padding: 24px 24px 0 24px;
+  justify-items: center;
+  max-width: 1440px;
+  @include respond-to("desktop") {
+    grid-template-columns: 1fr 4fr;
+  }
+
+  .Sidebar {
     display: none;
+    width: 100%;
     @include respond-to("desktop") {
       display: block;
-      min-width: 250px;
     }
+  }
+  
+  .Grid {
+    width: 100%;
   }
 }

@@ -1,9 +1,10 @@
 .Navbar {
   display: flex;
   justify-content: center;
-  background-color: hsla(0, 0%, 100%, 0.95);
   padding: 8px 16px;
-  backdrop-filter: blur(8px);
+  background: #fffffff5;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 0 0 1px whitesmoke;
 
   &__layout {
     display: grid;
@@ -11,10 +12,13 @@
     grid-template-rows: 40px auto;
     align-content: center;
     justify-items: center;
-    gap: 14px 32px;
+    gap: 4px 32px;
     max-width: 1280px;
     align-self: center;
     flex-grow: 1;
+    @include respond-to("desktop") {
+      gap: 14px 32px;
+    }
   }
 
   &__logo {
@@ -37,14 +41,14 @@
       margin: 0;
       flex-grow: 1;
       caret-color: transparent;
-      background-color: $control-background;
       padding: 8px 16px;
       border-radius: 12px;
+      background-color: $control-background;
 
       &::-webkit-input-placeholder {
         text-align: center;
-        color: black;
-        font-weight: 500;
+        color: #4d4d4d;
+        font-weight: 600;
       }
 
       &:-moz-placeholder {
@@ -81,7 +85,6 @@
     flex-wrap: nowrap;
     justify-items: center;
     grid-column: 3;
-    @apply gap-x-2;
   }
 
   @include respond-to("tablet") {
@@ -104,16 +107,6 @@
     &__logo {
       display: grid;
       justify-self: start;
-    }
-  }
-
-  .Layout & {
-    grid-column: 1/3;
-    grid-row: 1;
-    z-index: 1;
-
-    @media screen and (min-width: 1024px) {
-      z-index: 1;
     }
   }
 }

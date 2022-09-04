@@ -1,13 +1,17 @@
 .ListCard {
   display: flex;
   flex-direction: column;
-  row-gap: 12px;
+  row-gap: 8px;
   user-select: none;
   padding: 16px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: 1px 1px 4px hsl(0, 0%, 97%);
 
   &__title {
     padding-left: 12px;
-    padding-bottom: 12px;
+  }
+
+  .List {
+    padding: 6px;
+    background-color: $control-background;
   }
 }

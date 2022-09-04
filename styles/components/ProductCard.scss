@@ -1,7 +1,7 @@
 .ProductCard {
   display: grid;
   align-items: center;
-  gap: 2px 0;
+  gap: 6px 0;
   padding: 16px;
   background-color: white;
   @include elevation;
@@ -23,17 +23,17 @@
   &__title {
     grid-row: 3;
     overflow: hidden;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
-    line-height: 15pt;
+    line-height: 14px;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color:#555454;
+    color: rgb(44, 44, 44);
   }
 
   &__price {
     grid-row: 4;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
   }
 

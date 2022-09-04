@@ -1,4 +1,3 @@
-import { stringify } from "querystring";
 import React, { ReactElement } from "react";
 import GridItem from "./GridItem";
 
