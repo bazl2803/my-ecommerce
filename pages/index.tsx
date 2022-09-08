@@ -5,14 +5,15 @@ import ListItem from "../components/ListItem";
 import Grid from "../layout/Grid";
 import List from "../components/List";
 import Sidebar from "../components/Sidebar";
-import TextBlock from "../components/TextBlock";
 import { Product } from "../types";
 
-import ipad from "../public/productExamples/apple_ipad-pro-spring21_hero_04202021_big.jpg.large.jpg";
+import ipad from "../public/productExamples/ipad-pro-12-11-select-202104_FMT_WHH.jpg";
 import watch from "../public/productExamples/ML743_VW_34FR+watch-41-stainless-graphite-cell-7s_VW_34FR_WF_CO.jpg";
 import imac from "../public/productExamples/imac-24-green-cto-hero-202104.jpg";
 import iphone from "../public/productExamples/iphone_13_pro_max_verde_alpino_01_l.jpg";
 import lg from "../public/productExamples/LG-38-Inch-UltraWide-QHD-Plus-IPS-Curved-Monitor-NVIDIA-G-SYNCH-Compatibility-38WN95C-WL-hero-med.png";
+import SidebarItem from "../components/SidebarItem";
+import ProductCard from "../features/products/ProductCard";
 
 const productsData: Product[] = [
   {
@@ -81,6 +82,7 @@ const Home: NextPage = () => {
       </Head>
       <div className="Home">
         <Sidebar>
+          <SidebarItem text="Categories">
           <List>
             <ListItem>Storage</ListItem>
             <ListItem>Processors</ListItem>
@@ -97,6 +99,7 @@ const Home: NextPage = () => {
             <ListItem>Chairs</ListItem>
             <ListItem>Sound</ListItem>
           </List>
+          </SidebarItem>
         </Sidebar>
 
         <Grid>
@@ -104,7 +107,6 @@ const Home: NextPage = () => {
           <Showcase title="Top Trending" products={productsData} />
           <Showcase title="Most Viewed" products={productsData} />
           <Showcase title="New Arrivals" products={productsData} />
-          <Showcase title="Great Discounts" products={productsData} />
           <Showcase title="Editor's Choice" products={productsData} />
         </Grid>
       </div>

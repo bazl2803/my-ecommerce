@@ -1,13 +1,11 @@
 .SidebarItem {
   display: flex;
-  align-items: center;
-  gap: 24px;
+  flex-direction: column;
+  gap: 12px;
   user-select: none;
   transition-duration: 0.3s;
-  margin-top: 24px;
-  @apply text-sm text-neutral-700 rounded-lg;
 
-  &__icon {
-    @apply w-4 h-4;
+  &__text {
+    margin: 0 8px;
   }
 }

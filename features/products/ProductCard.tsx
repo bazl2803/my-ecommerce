@@ -13,44 +13,61 @@ import Image from "next/image";
 import Link from "next/link";
 import Card from "../../components/Card";
 import Rating from "../../components/Rating";
-import { Product } from "../../types";
 
 /**
  * Types
  */
 interface Props {
-  product: Product;
+  id: string;
+  thumbnail: string;
+  name: string;
+  tag?: string;
+  price: number;
+  rating: number;
   layout?: string;
 }
 
 /**
  * Definition
  */
-const ProductCard = ({ product, layout }: Props) => {
+const ProductCard = ({
+  id,
+  thumbnail,
+  name,
+  tag,
+  price,
+  rating,
+  layout,
+}: Props) => {
   return (
-    <Link href="/products/[id]" as={`/products/${product.id}`}>
+    <Link href="/products/[id]" as={`/products/${id}`}>
       <a>
         <Card
           className={`ProductCard ${layout ? `ProductCard--${layout}` : ""}`}
         >
           <div className="ProductCard__image">
             <Image
-              src={product.thumbnail}
-              alt={product.name}
+              src={thumbnail}
+              alt={name}
               layout="responsive"
               objectFit="scale-down"
               width={100}
               height={100}
             />
           </div>
-          <div className="ProductCard__tag">
-            {product.tag ? product.tag : ""}
-          </div>
-          <div className="ProductCard__title">{product.name}</div>
+
+          <div className="ProductCard__name">{name}</div>
+
           <div className="ProductCard__price">
-            {"$" + product.price.toLocaleString()}
+            {"$" + price.toLocaleString()}
           </div>
-          <Rating className="ProductCard__rating" value={product.rating} />
+
+          {layout != "minimal" ?? (
+            <>
+              <div className="ProductCard__tag">{tag ?? tag}</div>
+              <Rating className="ProductCard__rating" value={rating} />
+            </>
+          )}
         </Card>
       </a>
     </Link>
