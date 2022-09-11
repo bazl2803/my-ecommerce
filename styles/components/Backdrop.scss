@@ -1,0 +1,10 @@
+.Backdrop {
+  background-color: #000000be;
+  overflow: auto;
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: all 0.5s;
+  z-index: -1;
+}

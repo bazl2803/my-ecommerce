@@ -8,6 +8,8 @@
 @import "vendors/tailwind.scss";
 
 /* Components */
+@import "components/Backdrop.scss";
+@import "components/ActionSheet.scss";
 @import "components/Sidebar.scss";
 @import "components/SidebarItem.scss";
 @import "components/Button.scss";

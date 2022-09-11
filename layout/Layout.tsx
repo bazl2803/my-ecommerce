@@ -12,6 +12,7 @@ import logo from "../public/logoipsum-logo-55.svg";
 import Head from "next/head";
 import Navbar from "./Navbar";
 import Button from "../components/Button";
+import ActionButton from "../components/ActionButton";
 
 // Types
 type props = {
@@ -29,8 +30,9 @@ export default function Layout({ children, title }: props) {
         <title>{title}</title>
       </Head>
       <Navbar logoSource={logo}>
-        <Button icon="cart-shopping" />
-        <Button icon="user" />
+        <ActionButton title="Hello, Sign in">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, sunt.
+        </ActionButton>
       </Navbar>
       <main>{children}</main>
     </div>

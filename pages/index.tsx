@@ -13,7 +13,6 @@ import imac from "../public/productExamples/imac-24-green-cto-hero-202104.jpg";
 import iphone from "../public/productExamples/iphone_13_pro_max_verde_alpino_01_l.jpg";
 import lg from "../public/productExamples/LG-38-Inch-UltraWide-QHD-Plus-IPS-Curved-Monitor-NVIDIA-G-SYNCH-Compatibility-38WN95C-WL-hero-med.png";
 import SidebarItem from "../components/SidebarItem";
-import ProductCard from "../features/products/ProductCard";
 
 const productsData: Product[] = [
   {
