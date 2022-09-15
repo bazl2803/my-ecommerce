@@ -20,6 +20,7 @@
 @import "components/ProductCard.scss";
 @import "components/Showcase.scss";
 @import "components/Rating.scss";
+@import "components/TextBox.scss";
 
 /* Layout */
 @import "layout/layout.scss";
@@ -28,3 +29,4 @@
 
 /* Pages */
 @import "pages/Home";
+@import "pages/SignUp.scss";

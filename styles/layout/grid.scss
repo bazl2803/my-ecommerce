@@ -1,8 +1,8 @@
 .Grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100%, 320px));
+  grid-template-columns: repeat(auto-fill, minmax(100%, 360px));
   grid-auto-flow: dense;
-  gap: 50px 10px;
+  gap: 24px 12px;
   justify-content: space-around;
 
   @include respond-to("tablet") {

@@ -27,32 +27,37 @@ interface Props {
   color?: string;
   weight?: string;
   size?: string;
+  align?: string;
   children: string;
 }
 
 /**
  * Definition
  */
-const TextBlock = ({
+const TextBlock = function ({
   className,
   variant,
   font,
   color,
   weight,
   size,
+  align,
   children,
-}: Props) => {
+}: Props) {
   const style = {
     fontFamily: font,
     fontWeight: weight,
     fontSize: size,
     color: color,
+    textAlign: align,
   };
   return (
     <div
-      className={`TextBlock
-      ${variant ? `Typography--${variant}` : ""}
-      ${className ? className : ""}`}
+      className={
+        "TextBlock" +
+        `${variant ? " Typography--" + variant : ""}` +
+        `${className ? ` ${className}` : ""}`
+      }
       style={style}
     >
       {children}

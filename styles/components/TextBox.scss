@@ -1,0 +1,19 @@
+.TextBox {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  padding: 2px;
+  gap: 4px;
+
+  &__layout {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 8px 12px;
+    border-radius: 0.75em;
+
+    input {
+      flex-grow: 1;
+      outline: none;
+      background: none !important;
+    }
+  }
+}

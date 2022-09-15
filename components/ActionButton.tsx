@@ -4,17 +4,18 @@ import Button from "./Button";
 
 interface props {
   icon?: string;
+  text: string;
   title: string;
   children: ReactNode;
 }
 
-const ActionButton = ({ title, icon, children }: props) => {
+const ActionButton = ({ title, text, icon, children }: props) => {
   const [open, setOpen] = useState(false);
 
   return (
     <div className="ActionButton">
       <Button icon={icon} onClick={() => setOpen(!open)}>
-        {title}
+        {text}
       </Button>
       <ActionSheet title={title} open={open} onClose={() => setOpen(false)}>
         {children}

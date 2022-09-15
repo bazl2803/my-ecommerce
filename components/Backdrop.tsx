@@ -11,11 +11,6 @@ const Backdrop = ({ children, open, onClick }: props) => {
     <div
       className="Backdrop"
       onClick={onClick}
-      onScroll={(e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        e.nativeEvent.stopImmediatePropagation();
-      }}
     >
       {children}
     </div>

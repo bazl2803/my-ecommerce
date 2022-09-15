@@ -11,8 +11,11 @@ import React, { ReactNode } from "react";
 import logo from "../public/logoipsum-logo-55.svg";
 import Head from "next/head";
 import Navbar from "./Navbar";
-import Button from "../components/Button";
 import ActionButton from "../components/ActionButton";
+import TextBox from "../components/TextBox";
+import Button from "../components/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SignUp from "../features/authentication/SignUp";
 
 // Types
 type props = {
@@ -30,8 +33,8 @@ export default function Layout({ children, title }: props) {
         <title>{title}</title>
       </Head>
       <Navbar logoSource={logo}>
-        <ActionButton title="Hello, Sign in">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, sunt.
+        <ActionButton text="Hello, Sign in" title="Sign Up">
+          <SignUp />
         </ActionButton>
       </Navbar>
       <main>{children}</main>
