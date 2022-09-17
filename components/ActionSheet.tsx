@@ -15,16 +15,16 @@ const ActionSheet = ({ title, open = false, children, onClose }: props) => {
   return open ? (
     <div className="ActionSheet">
       <Backdrop open={open} onClick={onClose} />
+      
       <div className="ActionSheet__layout">
-        <div className="ActionSheet__header">
-          <FontAwesomeIcon
-            icon={"fa-solid fa-minus" as IconProp}
-            onTouchMove={onClose}
-          />
+
+        <div className="ActionSheet__header" onTouchMove={onClose}>
+          <FontAwesomeIcon icon={"fa-solid fa-minus" as IconProp} />
           <TextBlock className="ActionSheet__title" variant="h6">
             {title}
           </TextBlock>
         </div>
+
         <div className="ActionSheet__body">{children}</div>
       </div>
     </div>

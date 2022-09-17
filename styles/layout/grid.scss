@@ -1,16 +1,11 @@
 .Grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100%, 360px));
+  grid-template-columns: repeat(auto-fill, 100%);
   grid-auto-flow: dense;
   gap: 24px 12px;
   justify-content: space-around;
 
   @include respond-to("tablet") {
-    gap: 20px;
-    grid-template-columns: repeat(2, 380px);
-  }
-
-  @include respond-to("desktop") {
-    grid-template-columns: repeat(2, 500px);
+    grid-template-columns: repeat(2, 1fr);
   }
 }

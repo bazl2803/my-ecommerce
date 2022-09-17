@@ -39,7 +39,7 @@ const Showcase = ({ title, products }: Props) => {
     <div className="Showcase">
       <div className="Showcase__header">
         <TextBlock variant="title">{title}</TextBlock>
-        <Button text="See more" />
+        <Button>See more</Button>
       </div>
       <div className="Showcase__layout">
         {products.map((product, index) => (

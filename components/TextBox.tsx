@@ -62,7 +62,7 @@ const TextBox = ({
       </div>
 
       {hint && verifyRegex ? (
-        <TextBlock className="TextBox__hint">{hint}</TextBlock>
+        <TextBlock className="TextBox__hint" variant="caption">{hint}</TextBlock>
       ) : null}
 
       {error && !verifyRegex ? (

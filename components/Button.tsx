@@ -15,10 +15,10 @@ import { IconName } from "@fortawesome/fontawesome-svg-core";
  * Types
  */
 interface Props {
-  icon?: string;
   children?: ReactNode;
-  onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
   className?: string;
+  icon?: string;
+  onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 /**

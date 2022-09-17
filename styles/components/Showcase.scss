@@ -23,7 +23,11 @@
     grid-row: 3;
     grid-template-columns: repeat(2, auto);
 
-    @include respond-to("tablet") {
+    @include respond-to("mobile") {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include respond-to("desktop") {
       grid-template-columns: repeat(3, auto);
     }
 
