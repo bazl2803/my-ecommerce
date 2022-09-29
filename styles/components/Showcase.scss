@@ -2,11 +2,11 @@
   display: grid;
   grid-template-rows: auto 1fr;
   gap: 8px;
-  background-color: $bgColor;
   padding: 16px;
-  border-radius: 24px;
+  border-radius: 1.5em;
   height: fit-content;
   width: fit-content;
+  @apply bg-neutral-50;
 
   &__header {
     display: grid;

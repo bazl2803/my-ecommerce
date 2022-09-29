@@ -1,0 +1,42 @@
+.IntervalInput {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  justify-items: center;
+  align-items: center;
+  gap: 12px;
+  padding: 4px;
+  border-radius: 1.75em;
+  width: fit-content;
+  user-select: none;
+
+  /*
+  Dark theme
+  .IntervalInput {
+    box-shadow: 0 0 6px #484848 inset;
+    background-color: black;
+
+    &__next, &__back {
+      box-shadow: rgb(145 145 145 / 0%) 0px 2px 8px 0px;
+      background-color: #ffffff14;
+    }
+  }
+  */
+
+  &__next,
+  &__back {
+    padding: 9px 12px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: white;
+    user-select: none;
+    border-radius: 50%;
+
+    svg {
+      height: 1em;
+    }
+  }
+
+  &__value {
+    transition: ease-in-out 1s;
+    font-weight: 600;
+  }
+}

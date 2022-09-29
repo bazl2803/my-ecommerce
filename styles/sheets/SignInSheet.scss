@@ -1,0 +1,45 @@
+.SignIn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 6px;
+
+  &__options {
+    display: flex;
+    justify-content: center;
+    column-gap: 8px;
+  }
+
+  &__link {
+    align-self: center;
+    padding: 4px 0;
+    cursor: pointer;
+    @apply text-blue-600;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &--email {
+    background-color: $brandColor;
+    color: white;
+  }
+
+  &--google {
+    @apply bg-red-50 text-red-600;
+    height: 48px;
+    width: 48px;
+  }
+
+  &--facebook {
+    @apply bg-blue-50 text-blue-600;
+    height: 48px;
+    width: 48px;
+  }
+
+  &--apple {
+    @apply bg-slate-50;
+    height: 48px;
+    width: 48px;
+  }
+}

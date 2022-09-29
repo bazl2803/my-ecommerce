@@ -8,7 +8,7 @@ interface Props {
 
 export default function Card({ children, style, className }: Props) {
   return (
-    <div className={`Card ${className && className}`} style={style}>
+    <div className={"Card" + className ? ` ${className}` : ""} style={style}>
       {children}
     </div>
   );

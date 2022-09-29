@@ -1,13 +1,14 @@
 /**
  * Dependencies
  */
-import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { ReactElement, useEffect } from "react";
 
 /**
  * Types
  */
 
-interface Props {
+export interface props {
   className?: string;
   variant?:
     | "h1"
@@ -24,33 +25,40 @@ interface Props {
     | "caption"
     | "overline";
   font?: string;
-  color?: string;
   weight?: string;
   size?: string;
   align?: string;
-  children: string;
+  color?: string;
+  background?: string;
+  children:
+    | string
+    | ReactElement<typeof FontAwesomeIcon>
+    | ReactElement<typeof FontAwesomeIcon>[];
 }
 
 /**
  * Definition
  */
-const TextBlock = function ({
+const TextBlock = ({
   className,
   variant,
   font,
-  color,
   weight,
   size,
   align,
+  color,
+  background,
   children,
-}: Props) {
+}: props) => {
   const style = {
     fontFamily: font,
     fontWeight: weight,
     fontSize: size,
-    color: color,
-    textAlign: align,
+    TextAlign: align,
+    color,
+    background,
   };
+
   return (
     <div
       className={

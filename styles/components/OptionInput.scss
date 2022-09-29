@@ -1,0 +1,10 @@
+.OptionInput {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25em;
+  }
+}

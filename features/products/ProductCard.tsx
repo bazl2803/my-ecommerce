@@ -43,7 +43,9 @@ const ProductCard = ({
     <Link href="/products/[id]" as={`/products/${id}`}>
       <a>
         <Card
-          className={`ProductCard ${layout ? `ProductCard--${layout}` : ""}`}
+          className={
+            "ProductCard" + `${layout ? ` ProductCard--${layout}` : ""}`
+          }
         >
           <div className="ProductCard__image">
             <Image
@@ -62,12 +64,15 @@ const ProductCard = ({
             {"$" + price.toLocaleString()}
           </div>
 
-          {layout != "minimal" ?? (
-            <>
-              <div className="ProductCard__tag">{tag ?? tag}</div>
-              <Rating className="ProductCard__rating" value={rating} />
-            </>
-          )}
+          {
+            // If layout it isn't 'miminal'. Render ProductCard's Tag and Rating
+            layout != "minimal" ?? (
+              <>
+                <div className="ProductCard__tag">{tag ?? tag}</div>
+                <Rating className="ProductCard__rating" value={rating} />
+              </>
+            )
+          }
         </Card>
       </a>
     </Link>

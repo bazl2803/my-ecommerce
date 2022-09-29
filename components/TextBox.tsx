@@ -1,12 +1,11 @@
 import { IconName } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { type } from "os";
 import { useEffect, useState } from "react";
 import TextBlock from "./TextBlock";
 
 interface props {
   name: string;
-  value?: string;
+  value?: string | number;
   className?: string;
   label?: string;
   placeholder?: string;
@@ -15,7 +14,7 @@ interface props {
   error?: string;
   prefixIcon?: string;
   sufixIcon?: string;
-  type?: string;
+  type?: "text" | "email" | "password" | "phone" | "number";
 }
 
 const TextBox = ({
@@ -31,21 +30,11 @@ const TextBox = ({
   sufixIcon,
   type = "text",
 }: props) => {
-  let [verifyRegex, setVerifyRegex] = useState(false);
-
-  useEffect(() => {
-    RegExp(pattern ?? "").test(value ?? "")
-      ? setVerifyRegex(true)
-      : setVerifyRegex(false);
-  }, [value]);
+  const [inputValue, setInputValue] = useState(value);
 
   return (
-    <div className={`TextBox ${className ?? ""}`}>
-      {label ? (
-        <TextBlock className="TextBox__label text-neutral-600 px-2">
-          {label}
-        </TextBlock>
-      ) : null}
+    <div className={"TextBox" + `${className ? ` ${className}` : ""}`}>
+      {label ? <TextBlock className="TextBox__label">{label}</TextBlock> : null}
 
       <div className="TextBox__layout rounded-lg bg-neutral-100">
         {prefixIcon ? <FontAwesomeIcon icon={prefixIcon as IconName} /> : null}
@@ -54,20 +43,23 @@ const TextBox = ({
           type={type}
           name={name}
           placeholder={placeholder}
-          value={value}
+          value={inputValue}
           pattern={pattern}
+          onChange={(e) => {
+            setInputValue(e.target.value);
+          }}
         />
 
         {sufixIcon ? <FontAwesomeIcon icon={sufixIcon as IconName} /> : null}
       </div>
 
-      {hint && verifyRegex ? (
-        <TextBlock className="TextBox__hint" variant="caption">{hint}</TextBlock>
+      {hint ? (
+        <TextBlock className="TextBox__hint" variant="caption">
+          {hint}
+        </TextBlock>
       ) : null}
 
-      {error && !verifyRegex ? (
-        <TextBlock className="TextBox__error">{error}</TextBlock>
-      ) : null}
+      {error ? <TextBlock className="TextBox__error">{error}</TextBlock> : null}
     </div>
   );
 };

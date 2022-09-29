@@ -1,3 +1,9 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faApple,
+  faFacebookF,
+  faGoogle,
+} from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import React from "react";
 import Button from "../../components/Button";
@@ -23,18 +29,28 @@ const SignIn = () => {
       />
       <Button className="SignIn--email">Sign In</Button>
 
-      <TextBlock align="center">or</TextBlock>
+      <TextBlock TextAlign="center">or</TextBlock>
 
-      <div className="SignIn__options">
-        <Button className="SignIn--google">Sign In with Google</Button>
-        <Button className="SignIn--facebook">Sign In with Facebook</Button>
-        <Button className="SignIn--apple">Sign In with Apple</Button>
+      <div className="SignIn__options flex">
+        <Button className="SignIn--google">
+          <>
+            <FontAwesomeIcon icon={faGoogle} />
+          </>
+        </Button>
+        <Button className="SignIn--facebook">
+          <>
+            <FontAwesomeIcon icon={faFacebookF} />
+          </>
+        </Button>
+        <Button className="SignIn--apple">
+          <>
+            <FontAwesomeIcon icon={faApple} />
+          </>
+        </Button>
       </div>
 
       <Link href="#">
-        <TextBlock className="SignIn__link">
-          Don't have account?
-        </TextBlock>
+        <TextBlock className="SignIn__link">Don't have account?</TextBlock>
       </Link>
     </div>
   );

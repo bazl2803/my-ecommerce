@@ -1,0 +1,27 @@
+.OptionItem {
+  outline: none;
+  transition: 0.2s;
+  padding: 8px 12px;
+  border-radius: 0.75em;
+  width: fit-content;
+  user-select: none;
+  font-size: 12pt;
+  font-weight: 600;
+  align-items: center;
+  column-gap: 4px;
+  -webkit-tap-highlight-color: transparent;
+  background-color: whitesmoke;
+  cursor: default;
+
+  &:hover {
+    filter: brightness(0.92);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &--selected {
+    @apply bg-blue-600 text-white;
+  }
+}

@@ -1,0 +1,55 @@
+.Slideshow {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: center;
+  position: fixed;
+  overflow: auto;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  z-index: 200;
+  overscroll-behavior: none;
+  animation: fade 0.2s;
+
+  @include respond-to("tablet") {
+    justify-items: center;
+  }
+
+  &__layout {
+    grid-row: 1;
+  }
+
+  &__image {
+    height: fit-content;
+    @include respond-to("tablet") {
+      width: 80vh;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0.5em;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    grid-row: 2;
+    z-index: 201;
+    color: white;
+    grid-row: 2;
+    .IntervalInput__next,
+    .IntervalInput__back {
+      background-color: hsl(0, 0%, 4%);
+    }
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

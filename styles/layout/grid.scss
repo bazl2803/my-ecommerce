@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, 100%);
   grid-auto-flow: dense;
-  gap: 24px 12px;
+  gap: 24px 2em;
   justify-content: space-around;
 
   @include respond-to("tablet") {

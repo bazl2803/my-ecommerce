@@ -1,5 +1,5 @@
 .Backdrop {
-  background-color: #000000be;
+  background-color: hsla(0, 0%, 0%, 0.9);
   overflow: auto;
   position: fixed;
   inset: 0;
@@ -8,4 +8,5 @@
   transition: all 0.5s;
   z-index: -1;
   overscroll-behavior: none;
+  //backdrop-filter: blur(8px);
 }

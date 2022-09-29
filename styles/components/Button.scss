@@ -13,7 +13,8 @@
   align-items: center;
   column-gap: 4px;
   -webkit-tap-highlight-color: transparent;
-  background-color: $bgColor;
+  @apply bg-neutral-100;
+  cursor: default;
 
   &-icon {
     height: 20px;
@@ -26,13 +27,16 @@
     align-items: center;
     gap: 12px;
     width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
     svg {
       height: 1em;
     }
   }
 
   &:hover {
-    filter: brightness(0.92);
+    filter: brightness(0.98);
   }
 
   &:active {
