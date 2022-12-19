@@ -29,7 +29,7 @@ const SignIn = () => {
       />
       <Button className="SignIn--email">Sign In</Button>
 
-      <TextBlock TextAlign="center">or</TextBlock>
+      <TextBlock className="text-center">or</TextBlock>
 
       <div className="SignIn__options flex">
         <Button className="SignIn--google">

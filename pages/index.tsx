@@ -8,6 +8,7 @@ import Sidebar from "../components/Sidebar";
 import SidebarItem from "../components/SidebarItem";
 
 import { productsData } from "../data/example";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
@@ -19,8 +20,16 @@ const Home: NextPage = () => {
         <Sidebar>
           <SidebarItem text="Categories">
             <List>
-              <ListItem>Storage</ListItem>
-              <ListItem>Processors</ListItem>
+              <Link href="/categories/[id]" as={`/categories/1`}>
+                <a>
+                  <ListItem>Storage</ListItem>
+                </a>
+              </Link>
+              <Link href="/categories/[id]" as={`/categories/2`}>
+                <a>
+                  <ListItem>Proccesors</ListItem>
+                </a>
+              </Link>
               <ListItem>Monitors</ListItem>
               <ListItem>Keyboards</ListItem>
               <ListItem>Mouses</ListItem>
@@ -42,7 +51,6 @@ const Home: NextPage = () => {
           <Showcase title="Top Trending" products={productsData} />
           <Showcase title="Most Viewed" products={productsData} />
           <Showcase title="New Arrivals" products={productsData} />
-          <Showcase title="Editor's Choice" products={productsData} />
         </Grid>
       </div>
     </>

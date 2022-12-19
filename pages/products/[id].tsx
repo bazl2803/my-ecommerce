@@ -91,18 +91,22 @@ function ProductPage() {
           Support for Apple Pencil (2nd generation), Magic Keyboard, and Smart Keyboard Folio\n`}
         </TextBlock>
       </div>
-      <div className="flex justify-between" style={{ gridColumn: "1/4" }}>
-        <TextBlock size="24px" weight="600">
-          Features
-        </TextBlock>
-        <Button>Full specs</Button>
-      </div>
+
       <div className="ProductPage__features">
-        <FeatureItem label="Storage" value="128GB" />
-        <FeatureItem label="Processor" value="M1" />
-        <FeatureItem label="Display" value={`6.1\"`} />
-        <FeatureItem label="Conectivity" value="Wi-Fi" />
-        <FeatureItem label="Refresh Rate" value="120Hz" />
+        <div className="flex justify-between">
+          <TextBlock size="24px" weight="600">
+            Features
+          </TextBlock>
+          <Button>Full specs</Button>
+        </div>
+
+        <div className="ProductPage__featuresList">
+          <FeatureItem label="Storage" value="128GB" />
+          <FeatureItem label="Processor" value="M1" />
+          <FeatureItem label="Display" value={`6.1\"`} />
+          <FeatureItem label="Conectivity" value="Wi-Fi" />
+          <FeatureItem label="Refresh Rate" value="120Hz" />
+        </div>
       </div>
     </div>
   );
