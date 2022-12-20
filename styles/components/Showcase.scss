@@ -23,7 +23,7 @@
     grid-template-columns: repeat(2, auto);
 
     @include respond-to("mobile") {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
 
     @include respond-to("desktop") {
